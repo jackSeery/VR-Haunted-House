@@ -20,4 +20,19 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Advanced_Bowling_Demo");
     }
+
+    public void BasketballScene()
+    {
+        SceneManager.LoadScene("Basketball_Demo");
+    }
+
+    public void ColorScene()
+    {
+        SceneManager.LoadScene("Color_Scene");
+    }
+
+    public void LiquidScene()
+    {
+        SceneManager.LoadScene("Liquid_Physics_Scene");
+    }
 }
