@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/samplescene.unity
     guid: cbfe36cfddfde964d9dfce63a355d5dd
   - enabled: 1
-    path: Assets/Scenes/Colors_Demo.unity
-    guid: 0dcf7bcd8dd06fe4ea81e715bd7fb562
-  - enabled: 1
     path: Assets/Scenes/Basketball_Demo.unity
     guid: be156ffff7ad27940ac6bdcd8001e9ec
   - enabled: 1
     path: Assets/Scenes/Advanced_Bowling_Demo.unity
     guid: ecad06d39cdc43e44ac67fd526409bdd
+  - enabled: 1
+    path: Assets/Scenes/Color_Demo.unity
+    guid: fbfd7d918ccbbe34ca7b7e333930d0dc
+  - enabled: 1
+    path: Assets/Scenes/Liquid_Physics_Demo.unity
+    guid: 779960025b2456b4c9a83b3d9fe64b2a
   m_configObjects: {}
