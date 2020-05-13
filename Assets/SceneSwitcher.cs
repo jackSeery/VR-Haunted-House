@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR.InteractionSystem;
 
 public class SceneSwitcher : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void HubScene()
     {
-        SceneManager.LoadScene("samplescene");
+        SceneManager.LoadScene("Demo Hub");
     }
 
     public void BowlingScene()
@@ -26,13 +27,13 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene("Basketball_Demo");
     }
 
-    public void ColorScene()
+    public void GalaxyScene()
     {
-        SceneManager.LoadScene("Color_Scene");
+        SceneManager.LoadScene("Galaxy");
     }
 
     public void LiquidScene()
     {
-        SceneManager.LoadScene("Liquid_Physics_Scene");
+        SceneManager.LoadScene("Liquid_Physics_Demo");
     }
 }
