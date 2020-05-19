@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GalaxyMovement : MonoBehaviour
+public class VenusMovement : MonoBehaviour
 {
     float timeCounter = 0;
     // Start is called before the first frame update
@@ -16,9 +16,9 @@ public class GalaxyMovement : MonoBehaviour
     {
         timeCounter += Time.deltaTime;
 
-        float x = Mathf.Cos (timeCounter);
+        float x = 10 * Mathf.Cos (timeCounter);
         float y = 0;
-        float z = Mathf.Sin (timeCounter);
+        float z = 10 * Mathf.Sin (timeCounter);
 
         transform.position = new Vector3 (x, y, z);
     }
