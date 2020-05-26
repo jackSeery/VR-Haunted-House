@@ -5,16 +5,17 @@ using UnityEngine;
 public class EarthMovement : MonoBehaviour
 {
     float timeCounter = 0;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime;
+        timeCounter += Time.deltaTime * speed;
 
         float x = 15 * Mathf.Cos (timeCounter);
         float y = 0;

@@ -5,16 +5,17 @@ using UnityEngine;
 public class VenusMovement : MonoBehaviour
 {
     float timeCounter = 0;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 0.1174f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime;
+        timeCounter += Time.deltaTime * speed;
 
         float x = 10 * Mathf.Cos (timeCounter);
         float y = 0;

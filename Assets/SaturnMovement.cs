@@ -5,16 +5,18 @@ using UnityEngine;
 public class SaturnMovement : MonoBehaviour
 {
     float timeCounter = 0;
+    float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 0.0323f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime;
+        timeCounter += Time.deltaTime * speed;
 
         float x = 40 * Mathf.Cos (timeCounter);
         float y = 0;

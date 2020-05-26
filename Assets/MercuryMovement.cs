@@ -5,16 +5,17 @@ using UnityEngine;
 public class MercuryMovement : MonoBehaviour
 {
     float timeCounter = 0;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 0.1607f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime;
+        timeCounter += Time.deltaTime * speed;
 
         float x = 5 * Mathf.Cos (timeCounter);
         float y = 0;
