@@ -4,47 +4,33 @@ using UnityEngine;
 
 public class PinController : MonoBehaviour
 {
+    [SerializeField]
+    private GameEvents current;
     public int id;
-    private Vector3 pinDirection;
-    private Vector3 fallenAngle = Vector3.zero;
+    private bool isFallen = false;
+    private Rigidbody pinRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(pinDirection.ToString());
-        GameEvents.current.onPinFall += OnPinFall;
+        current.onPinFall += OnPinFall;
+        pinRigidBody = this.GetComponent<Rigidbody>();
+        pinRigidBody.centerOfMass = new Vector3(0, 0.2f, 0);
     }
 
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        pinDirection = this.transform.localEulerAngles;
-        Debug.Log("Pin " + this.id + " direction: " + pinDirection.ToString());
-
-        Debug.Log("Angle between upright and Pin " + this.id + " direction: " + Vector3.Angle(fallenAngle, pinDirection));
-
-        if (PinFallenOver(id))
+        GameObject coll = collision.gameObject;
+        if((coll.CompareTag("Ball") || coll.CompareTag("Pin")) && !isFallen)
         {
-            Debug.Log("This Pin object is fallen over: " + this.id);
+            this.OnPinFall();
         }
     }
 
     private void OnPinFall()
     {
         GameEvents.score++;
+        GameEvents.current.UpdateScore();
+        isFallen = true;
     }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (this.gameObject.transform.rotation.x > 30 || this.gameObject.transform.rotation.z > 30)
-        {
-            GameEvents.current.PinFall();
-            Destroy(this.gameObject);
-        }
-    }
-
-    private bool PinFallenOver(int id)
-    {
-        return Vector3.Angle(fallenAngle, pinDirection) > 10.0f;
-    }
-
 }
