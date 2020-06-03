@@ -37,7 +37,7 @@ public class BallController : MonoBehaviour
     public void OnBallFall()
     {
         Debug.Log("Ball fell off the world");
-        ballTransform.position = new Vector3(0, 1, 30);
+        ballTransform.position = new Vector3(0, 1, 27);
         ballRigidbody.velocity = new Vector3(0, 5, 0);
         ballRigidbody.angularVelocity = new Vector3(0, 0, 0);
         ballRigidbody.mass += 1.0f; //Just for fun, makes it easier to bowl over fallen pins as the ball gets heavier
